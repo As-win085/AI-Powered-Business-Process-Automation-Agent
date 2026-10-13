@@ -1,0 +1,52 @@
+{
+  "id": 11,
+  "supplier": {
+    "name": "Borealis Components GmbH",
+    "address": "Industriestrasse 12, Berlin, Germany"
+  },
+  "customer": "Kite Aviation Services",
+  "invoice_number": "INV-2024-0011",
+  "invoice_date": "2024-10-03",
+  "due_date": "2024-03-03",
+  "currency": "USD",
+  "subtotal": 23490.37,
+  "tax_total": 3031.4,
+  "total": 26521.77,
+  "line_items": [
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 37,
+      "unit_price": 126.88,
+      "tax_rate": 0.2,
+      "line_total": 4694.56
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 40,
+      "unit_price": 45.58,
+      "tax_rate": 0.25,
+      "line_total": 1823.2
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 37,
+      "unit_price": 263.78,
+      "tax_rate": 0.12,
+      "line_total": 9759.86
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 21,
+      "unit_price": 123.15,
+      "tax_rate": 0.18,
+      "line_total": 2586.15
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 20,
+      "unit_price": 231.33,
+      "tax_rate": 0.0,
+      "line_total": 4626.6
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": 0,
+  "supplier": {
+    "name": "Borealis Components GmbH",
+    "address": "Industriestrasse 12, Berlin, Germany"
+  },
+  "customer": "Riverside Hotel Group",
+  "invoice_number": "INV-2026-0000",
+  "invoice_date": "2026-05-08",
+  "due_date": "2026-09-08",
+  "currency": "USD",
+  "subtotal": 12188.47,
+  "tax_total": 812.43,
+  "total": 13000.9,
+  "line_items": [
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 7,
+      "unit_price": 339.97,
+      "tax_rate": 0.2,
+      "line_total": 2379.79
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 38,
+      "unit_price": 213.85,
+      "tax_rate": 0.0,
+      "line_total": 8126.3
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 14,
+      "unit_price": 120.17,
+      "tax_rate": 0.2,
+      "line_total": 1682.38
+    }
+  ]
+}

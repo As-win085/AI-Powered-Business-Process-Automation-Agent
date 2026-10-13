@@ -1,0 +1,52 @@
+{
+  "id": 15,
+  "supplier": {
+    "name": "Nimbus Trading Co.",
+    "address": "22 Harbour Way, Southampton, UK"
+  },
+  "customer": "Orchard Foods Inc.",
+  "invoice_number": "INV-2024-0015",
+  "invoice_date": "2024-03-24",
+  "due_date": "2024-02-24",
+  "currency": "USD",
+  "subtotal": 27317.69,
+  "tax_total": 4001.66,
+  "total": 31319.35,
+  "line_items": [
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 16,
+      "unit_price": 137.07,
+      "tax_rate": 0.25,
+      "line_total": 2193.12
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 25,
+      "unit_price": 436.72,
+      "tax_rate": 0.18,
+      "line_total": 10918.0
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 13,
+      "unit_price": 409.21,
+      "tax_rate": 0.18,
+      "line_total": 5319.73
+    },
+    {
+      "description": "LED panel light 60x60cm",
+      "quantity": 20,
+      "unit_price": 411.17,
+      "tax_rate": 0.05,
+      "line_total": 8223.4
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 2,
+      "unit_price": 331.72,
+      "tax_rate": 0.18,
+      "line_total": 663.44
+    }
+  ]
+}

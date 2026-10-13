@@ -1,0 +1,45 @@
+{
+  "id": 35,
+  "supplier": {
+    "name": "Onyx Construction Materials",
+    "address": "300 Cement Rd, Toronto, Canada"
+  },
+  "customer": "Bluewater Retail Ltd",
+  "invoice_number": "INV-2025-0035",
+  "invoice_date": "2025-06-14",
+  "due_date": "2025-05-14",
+  "currency": "USD",
+  "subtotal": 9732.9,
+  "tax_total": 1530.07,
+  "total": 11262.97,
+  "line_items": [
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 7,
+      "unit_price": 429.58,
+      "tax_rate": 0.12,
+      "line_total": 3007.06
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 32,
+      "unit_price": 147.67,
+      "tax_rate": 0.18,
+      "line_total": 4725.44
+    },
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 3,
+      "unit_price": 230.14,
+      "tax_rate": 0.12,
+      "line_total": 690.42
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 21,
+      "unit_price": 62.38,
+      "tax_rate": 0.18,
+      "line_total": 1309.98
+    }
+  ]
+}

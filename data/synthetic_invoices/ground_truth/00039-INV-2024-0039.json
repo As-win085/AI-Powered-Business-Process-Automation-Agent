@@ -1,0 +1,38 @@
+{
+  "id": 39,
+  "supplier": {
+    "name": "Borealis Components GmbH",
+    "address": "Industriestrasse 12, Berlin, Germany"
+  },
+  "customer": "Summit Workspaces",
+  "invoice_number": "INV-2024-0039",
+  "invoice_date": "2024-12-05",
+  "due_date": "2024-04-05",
+  "currency": "USD",
+  "subtotal": 35455.28,
+  "tax_total": 6815.02,
+  "total": 42270.3,
+  "line_items": [
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 31,
+      "unit_price": 391.86,
+      "tax_rate": 0.12,
+      "line_total": 12147.66
+    },
+    {
+      "description": "LED panel light 60x60cm",
+      "quantity": 40,
+      "unit_price": 347.89,
+      "tax_rate": 0.25,
+      "line_total": 13915.6
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 22,
+      "unit_price": 426.91,
+      "tax_rate": 0.2,
+      "line_total": 9392.02
+    }
+  ]
+}

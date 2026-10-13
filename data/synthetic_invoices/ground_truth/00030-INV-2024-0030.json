@@ -1,0 +1,45 @@
+{
+  "id": 30,
+  "supplier": {
+    "name": "Nimbus Trading Co.",
+    "address": "22 Harbour Way, Southampton, UK"
+  },
+  "customer": "Crystal Peak Resorts",
+  "invoice_number": "INV-2024-0030",
+  "invoice_date": "2024-12-18",
+  "due_date": "2024-10-18",
+  "currency": "USD",
+  "subtotal": 13205.29,
+  "tax_total": 1786.05,
+  "total": 14991.34,
+  "line_items": [
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 4,
+      "unit_price": 278.91,
+      "tax_rate": 0.25,
+      "line_total": 1115.64
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 32,
+      "unit_price": 55.78,
+      "tax_rate": 0.0,
+      "line_total": 1784.96
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 19,
+      "unit_price": 237.35,
+      "tax_rate": 0.18,
+      "line_total": 4509.65
+    },
+    {
+      "description": "LED panel light 60x60cm",
+      "quantity": 12,
+      "unit_price": 482.92,
+      "tax_rate": 0.12,
+      "line_total": 5795.04
+    }
+  ]
+}

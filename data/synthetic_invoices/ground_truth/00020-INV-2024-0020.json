@@ -1,0 +1,52 @@
+{
+  "id": 20,
+  "supplier": {
+    "name": "Nimbus Trading Co.",
+    "address": "22 Harbour Way, Southampton, UK"
+  },
+  "customer": "Riverside Hotel Group",
+  "invoice_number": "INV-2024-0020",
+  "invoice_date": "2024-04-16",
+  "due_date": "2024-10-16",
+  "currency": "USD",
+  "subtotal": 12960.38,
+  "tax_total": 1651.11,
+  "total": 14611.49,
+  "line_items": [
+    {
+      "description": "Cable management kit",
+      "quantity": 37,
+      "unit_price": 101.25,
+      "tax_rate": 0.25,
+      "line_total": 3746.25
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 32,
+      "unit_price": 202.83,
+      "tax_rate": 0.05,
+      "line_total": 6490.56
+    },
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 1,
+      "unit_price": 446.87,
+      "tax_rate": 0.0,
+      "line_total": 446.87
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 15,
+      "unit_price": 92.06,
+      "tax_rate": 0.25,
+      "line_total": 1380.9
+    },
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 30,
+      "unit_price": 29.86,
+      "tax_rate": 0.05,
+      "line_total": 895.8
+    }
+  ]
+}

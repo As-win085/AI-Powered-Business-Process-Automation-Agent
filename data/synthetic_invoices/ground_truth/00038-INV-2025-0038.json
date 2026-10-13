@@ -1,0 +1,52 @@
+{
+  "id": 38,
+  "supplier": {
+    "name": "Onyx Construction Materials",
+    "address": "300 Cement Rd, Toronto, Canada"
+  },
+  "customer": "Falcon Freight Co.",
+  "invoice_number": "INV-2025-0038",
+  "invoice_date": "2025-09-25",
+  "due_date": "2025-11-25",
+  "currency": "USD",
+  "subtotal": 45037.1,
+  "tax_total": 6684.38,
+  "total": 51721.48,
+  "line_items": [
+    {
+      "description": "LED panel light 60x60cm",
+      "quantity": 13,
+      "unit_price": 490.48,
+      "tax_rate": 0.05,
+      "line_total": 6376.24
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 25,
+      "unit_price": 120.61,
+      "tax_rate": 0.18,
+      "line_total": 3015.25
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 21,
+      "unit_price": 373.63,
+      "tax_rate": 0.25,
+      "line_total": 7846.23
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 25,
+      "unit_price": 494.26,
+      "tax_rate": 0.25,
+      "line_total": 12356.5
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 32,
+      "unit_price": 482.59,
+      "tax_rate": 0.05,
+      "line_total": 15442.88
+    }
+  ]
+}

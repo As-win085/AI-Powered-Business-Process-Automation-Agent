@@ -1,0 +1,31 @@
+{
+  "id": 8,
+  "supplier": {
+    "name": "Zeppelin Electronics",
+    "address": "5-15 Shinbashi, Tokyo, Japan"
+  },
+  "customer": "Summit Workspaces",
+  "invoice_number": "INV-2026-0008",
+  "invoice_date": "2026-01-22",
+  "due_date": "2026-09-22",
+  "currency": "USD",
+  "subtotal": 10117.33,
+  "tax_total": 232.01,
+  "total": 10349.34,
+  "line_items": [
+    {
+      "description": "Cable management kit",
+      "quantity": 22,
+      "unit_price": 401.29,
+      "tax_rate": 0.0,
+      "line_total": 8828.38
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 13,
+      "unit_price": 99.15,
+      "tax_rate": 0.18,
+      "line_total": 1288.95
+    }
+  ]
+}

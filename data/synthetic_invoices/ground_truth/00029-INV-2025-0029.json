@@ -1,0 +1,45 @@
+{
+  "id": 29,
+  "supplier": {
+    "name": "Quanta Office Solutions",
+    "address": "8 Rue de la Paix, Paris, France"
+  },
+  "customer": "Crystal Peak Resorts",
+  "invoice_number": "INV-2025-0029",
+  "invoice_date": "2025-04-04",
+  "due_date": "2025-06-04",
+  "currency": "USD",
+  "subtotal": 45982.84,
+  "tax_total": 8602.36,
+  "total": 54585.2,
+  "line_items": [
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 35,
+      "unit_price": 475.68,
+      "tax_rate": 0.25,
+      "line_total": 16648.8
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 13,
+      "unit_price": 112.11,
+      "tax_rate": 0.18,
+      "line_total": 1457.43
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 38,
+      "unit_price": 488.42,
+      "tax_rate": 0.2,
+      "line_total": 18559.96
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 19,
+      "unit_price": 490.35,
+      "tax_rate": 0.05,
+      "line_total": 9316.65
+    }
+  ]
+}

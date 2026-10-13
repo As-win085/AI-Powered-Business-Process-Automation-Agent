@@ -1,0 +1,31 @@
+{
+  "id": 17,
+  "supplier": {
+    "name": "Silverline Logistics",
+    "address": "18 Docklands Blvd, Singapore"
+  },
+  "customer": "Bluewater Retail Ltd",
+  "invoice_number": "INV-2025-0017",
+  "invoice_date": "2025-10-07",
+  "due_date": "2025-04-07",
+  "currency": "USD",
+  "subtotal": 2572.29,
+  "tax_total": 32.7,
+  "total": 2604.99,
+  "line_items": [
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 28,
+      "unit_price": 5.84,
+      "tax_rate": 0.2,
+      "line_total": 163.52
+    },
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 13,
+      "unit_price": 185.29,
+      "tax_rate": 0.0,
+      "line_total": 2408.77
+    }
+  ]
+}

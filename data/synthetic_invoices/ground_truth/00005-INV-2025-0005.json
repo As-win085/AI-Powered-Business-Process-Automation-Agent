@@ -1,0 +1,45 @@
+{
+  "id": 5,
+  "supplier": {
+    "name": "Borealis Components GmbH",
+    "address": "Industriestrasse 12, Berlin, Germany"
+  },
+  "customer": "Crystal Peak Resorts",
+  "invoice_number": "INV-2025-0005",
+  "invoice_date": "2025-03-15",
+  "due_date": "2025-05-15",
+  "currency": "USD",
+  "subtotal": 28184.88,
+  "tax_total": 4864.57,
+  "total": 33049.45,
+  "line_items": [
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 12,
+      "unit_price": 256.3,
+      "tax_rate": 0.0,
+      "line_total": 3075.6
+    },
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 20,
+      "unit_price": 421.63,
+      "tax_rate": 0.2,
+      "line_total": 8432.6
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 13,
+      "unit_price": 80.66,
+      "tax_rate": 0.05,
+      "line_total": 1048.58
+    },
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 34,
+      "unit_price": 459.65,
+      "tax_rate": 0.2,
+      "line_total": 15628.1
+    }
+  ]
+}

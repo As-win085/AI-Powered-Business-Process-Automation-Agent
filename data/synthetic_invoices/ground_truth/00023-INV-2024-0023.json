@@ -1,0 +1,38 @@
+{
+  "id": 23,
+  "supplier": {
+    "name": "Zeppelin Electronics",
+    "address": "5-15 Shinbashi, Tokyo, Japan"
+  },
+  "customer": "Summit Workspaces",
+  "invoice_number": "INV-2024-0023",
+  "invoice_date": "2024-07-11",
+  "due_date": "2024-10-11",
+  "currency": "USD",
+  "subtotal": 14100.84,
+  "tax_total": 2916.71,
+  "total": 17017.55,
+  "line_items": [
+    {
+      "description": "Safety goggles, ANSI rated",
+      "quantity": 9,
+      "unit_price": 490.46,
+      "tax_rate": 0.2,
+      "line_total": 4414.14
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 26,
+      "unit_price": 297.99,
+      "tax_rate": 0.25,
+      "line_total": 7747.74
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 6,
+      "unit_price": 323.16,
+      "tax_rate": 0.05,
+      "line_total": 1938.96
+    }
+  ]
+}

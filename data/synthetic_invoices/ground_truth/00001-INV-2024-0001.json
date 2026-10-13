@@ -1,0 +1,31 @@
+{
+  "id": 1,
+  "supplier": {
+    "name": "Silverline Logistics",
+    "address": "18 Docklands Blvd, Singapore"
+  },
+  "customer": "Orchard Foods Inc.",
+  "invoice_number": "INV-2024-0001",
+  "invoice_date": "2024-08-19",
+  "due_date": "2024-03-19",
+  "currency": "USD",
+  "subtotal": 6078.74,
+  "tax_total": 462.92,
+  "total": 6541.66,
+  "line_items": [
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 28,
+      "unit_price": 173.42,
+      "tax_rate": 0.05,
+      "line_total": 4855.76
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 22,
+      "unit_price": 55.59,
+      "tax_rate": 0.18,
+      "line_total": 1222.98
+    }
+  ]
+}

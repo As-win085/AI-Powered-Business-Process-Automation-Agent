@@ -1,0 +1,45 @@
+{
+  "id": 14,
+  "supplier": {
+    "name": "Borealis Components GmbH",
+    "address": "Industriestrasse 12, Berlin, Germany"
+  },
+  "customer": "Bluewater Retail Ltd",
+  "invoice_number": "INV-2026-0014",
+  "invoice_date": "2026-03-18",
+  "due_date": "2026-07-18",
+  "currency": "USD",
+  "subtotal": 20322.52,
+  "tax_total": 2959.53,
+  "total": 23282.05,
+  "line_items": [
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 36,
+      "unit_price": 78.31,
+      "tax_rate": 0.05,
+      "line_total": 2819.16
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 20,
+      "unit_price": 185.5,
+      "tax_rate": 0.0,
+      "line_total": 3710.0
+    },
+    {
+      "description": "LED panel light 60x60cm",
+      "quantity": 14,
+      "unit_price": 342.62,
+      "tax_rate": 0.25,
+      "line_total": 4796.68
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 23,
+      "unit_price": 391.16,
+      "tax_rate": 0.18,
+      "line_total": 8996.68
+    }
+  ]
+}

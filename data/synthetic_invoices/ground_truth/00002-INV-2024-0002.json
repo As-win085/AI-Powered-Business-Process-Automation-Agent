@@ -1,0 +1,52 @@
+{
+  "id": 2,
+  "supplier": {
+    "name": "Atlas Power Systems",
+    "address": "66 Grid Street, Mumbai, India"
+  },
+  "customer": "Crystal Peak Resorts",
+  "invoice_number": "INV-2024-0002",
+  "invoice_date": "2024-12-15",
+  "due_date": "2024-09-15",
+  "currency": "USD",
+  "subtotal": 29478.72,
+  "tax_total": 5537.79,
+  "total": 35016.51,
+  "line_items": [
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 36,
+      "unit_price": 150.12,
+      "tax_rate": 0.25,
+      "line_total": 5404.32
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 24,
+      "unit_price": 290.79,
+      "tax_rate": 0.25,
+      "line_total": 6978.96
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 3,
+      "unit_price": 332.33,
+      "tax_rate": 0.12,
+      "line_total": 996.99
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 15,
+      "unit_price": 433.91,
+      "tax_rate": 0.18,
+      "line_total": 6508.65
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 30,
+      "unit_price": 319.66,
+      "tax_rate": 0.12,
+      "line_total": 9589.8
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": 6,
+  "supplier": {
+    "name": "Borealis Components GmbH",
+    "address": "Industriestrasse 12, Berlin, Germany"
+  },
+  "customer": "Falcon Freight Co.",
+  "invoice_number": "INV-2025-0006",
+  "invoice_date": "2025-04-02",
+  "due_date": "2025-09-02",
+  "currency": "USD",
+  "subtotal": 20803.7,
+  "tax_total": 3939.96,
+  "total": 24743.66,
+  "line_items": [
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 6,
+      "unit_price": 367.29,
+      "tax_rate": 0.0,
+      "line_total": 2203.74
+    },
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 9,
+      "unit_price": 68.55,
+      "tax_rate": 0.18,
+      "line_total": 616.95
+    },
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 11,
+      "unit_price": 136.2,
+      "tax_rate": 0.2,
+      "line_total": 1498.2
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 14,
+      "unit_price": 464.81,
+      "tax_rate": 0.25,
+      "line_total": 6507.34
+    },
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 13,
+      "unit_price": 357.91,
+      "tax_rate": 0.18,
+      "line_total": 4652.83
+    },
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 24,
+      "unit_price": 221.86,
+      "tax_rate": 0.2,
+      "line_total": 5324.64
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": 13,
+  "supplier": {
+    "name": "Quanta Office Solutions",
+    "address": "8 Rue de la Paix, Paris, France"
+  },
+  "customer": "Bluewater Retail Ltd",
+  "invoice_number": "INV-2024-0013",
+  "invoice_date": "2024-05-04",
+  "due_date": "2024-01-04",
+  "currency": "USD",
+  "subtotal": 37305.93,
+  "tax_total": 3656.86,
+  "total": 40962.79,
+  "line_items": [
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 18,
+      "unit_price": 144.47,
+      "tax_rate": 0.05,
+      "line_total": 2600.46
+    },
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 22,
+      "unit_price": 105.78,
+      "tax_rate": 0.25,
+      "line_total": 2327.16
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 33,
+      "unit_price": 246.82,
+      "tax_rate": 0.0,
+      "line_total": 8145.06
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 28,
+      "unit_price": 415.53,
+      "tax_rate": 0.0,
+      "line_total": 11634.84
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 22,
+      "unit_price": 386.7,
+      "tax_rate": 0.25,
+      "line_total": 8507.4
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 11,
+      "unit_price": 371.91,
+      "tax_rate": 0.2,
+      "line_total": 4091.01
+    }
+  ]
+}

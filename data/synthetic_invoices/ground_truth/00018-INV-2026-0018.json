@@ -1,0 +1,45 @@
+{
+  "id": 18,
+  "supplier": {
+    "name": "Borealis Components GmbH",
+    "address": "Industriestrasse 12, Berlin, Germany"
+  },
+  "customer": "Crystal Peak Resorts",
+  "invoice_number": "INV-2026-0018",
+  "invoice_date": "2026-05-22",
+  "due_date": "2026-09-22",
+  "currency": "USD",
+  "subtotal": 22453.21,
+  "tax_total": 2359.45,
+  "total": 24812.66,
+  "line_items": [
+    {
+      "description": "Cable management kit",
+      "quantity": 19,
+      "unit_price": 279.43,
+      "tax_rate": 0.05,
+      "line_total": 5309.17
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 25,
+      "unit_price": 340.27,
+      "tax_rate": 0.05,
+      "line_total": 8506.75
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 37,
+      "unit_price": 153.97,
+      "tax_rate": 0.2,
+      "line_total": 5696.89
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 20,
+      "unit_price": 147.02,
+      "tax_rate": 0.18,
+      "line_total": 2940.4
+    }
+  ]
+}

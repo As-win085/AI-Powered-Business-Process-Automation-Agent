@@ -1,0 +1,52 @@
+{
+  "id": 28,
+  "supplier": {
+    "name": "Silverline Logistics",
+    "address": "18 Docklands Blvd, Singapore"
+  },
+  "customer": "Northbeam Energy LLC",
+  "invoice_number": "INV-2024-0028",
+  "invoice_date": "2024-04-24",
+  "due_date": "2024-08-24",
+  "currency": "USD",
+  "subtotal": 31302.27,
+  "tax_total": 4468.37,
+  "total": 35770.64,
+  "line_items": [
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 16,
+      "unit_price": 346.85,
+      "tax_rate": 0.25,
+      "line_total": 5549.6
+    },
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 32,
+      "unit_price": 226.85,
+      "tax_rate": 0.0,
+      "line_total": 7259.2
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 19,
+      "unit_price": 114.69,
+      "tax_rate": 0.25,
+      "line_total": 2179.11
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 20,
+      "unit_price": 333.66,
+      "tax_rate": 0.12,
+      "line_total": 6673.2
+    },
+    {
+      "description": "Safety goggles, ANSI rated",
+      "quantity": 36,
+      "unit_price": 267.81,
+      "tax_rate": 0.18,
+      "line_total": 9641.16
+    }
+  ]
+}

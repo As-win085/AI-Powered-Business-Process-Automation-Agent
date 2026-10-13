@@ -1,0 +1,31 @@
+{
+  "id": 19,
+  "supplier": {
+    "name": "Onyx Construction Materials",
+    "address": "300 Cement Rd, Toronto, Canada"
+  },
+  "customer": "Northbeam Energy LLC",
+  "invoice_number": "INV-2026-0019",
+  "invoice_date": "2026-08-26",
+  "due_date": "2026-08-26",
+  "currency": "USD",
+  "subtotal": 13469.85,
+  "tax_total": 2324.86,
+  "total": 15794.71,
+  "line_items": [
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 33,
+      "unit_price": 333.61,
+      "tax_rate": 0.2,
+      "line_total": 11009.13
+    },
+    {
+      "description": "LED panel light 60x60cm",
+      "quantity": 6,
+      "unit_price": 410.12,
+      "tax_rate": 0.05,
+      "line_total": 2460.72
+    }
+  ]
+}

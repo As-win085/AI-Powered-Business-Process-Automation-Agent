@@ -1,0 +1,207 @@
+{
+  "count": 40,
+  "seed": 42,
+  "vendor": "reportlab/fitz",
+  "records": [
+    {
+      "id": "00000-INV-2026-0000",
+      "invoice_number": "INV-2026-0000",
+      "total": 13000.9
+    },
+    {
+      "id": "00001-INV-2024-0001",
+      "invoice_number": "INV-2024-0001",
+      "total": 6541.66
+    },
+    {
+      "id": "00002-INV-2024-0002",
+      "invoice_number": "INV-2024-0002",
+      "total": 35016.51
+    },
+    {
+      "id": "00003-INV-2026-0003",
+      "invoice_number": "INV-2026-0003",
+      "total": 25393.17
+    },
+    {
+      "id": "00004-INV-2024-0004",
+      "invoice_number": "INV-2024-0004",
+      "total": 34832.88
+    },
+    {
+      "id": "00005-INV-2025-0005",
+      "invoice_number": "INV-2025-0005",
+      "total": 33049.45
+    },
+    {
+      "id": "00006-INV-2025-0006",
+      "invoice_number": "INV-2025-0006",
+      "total": 24743.66
+    },
+    {
+      "id": "00007-INV-2025-0007",
+      "invoice_number": "INV-2025-0007",
+      "total": 19764.91
+    },
+    {
+      "id": "00008-INV-2026-0008",
+      "invoice_number": "INV-2026-0008",
+      "total": 10349.34
+    },
+    {
+      "id": "00009-INV-2024-0009",
+      "invoice_number": "INV-2024-0009",
+      "total": 17335.14
+    },
+    {
+      "id": "00010-INV-2024-0010",
+      "invoice_number": "INV-2024-0010",
+      "total": 18895.11
+    },
+    {
+      "id": "00011-INV-2024-0011",
+      "invoice_number": "INV-2024-0011",
+      "total": 26521.77
+    },
+    {
+      "id": "00012-INV-2024-0012",
+      "invoice_number": "INV-2024-0012",
+      "total": 13088.92
+    },
+    {
+      "id": "00013-INV-2024-0013",
+      "invoice_number": "INV-2024-0013",
+      "total": 40962.79
+    },
+    {
+      "id": "00014-INV-2026-0014",
+      "invoice_number": "INV-2026-0014",
+      "total": 23282.05
+    },
+    {
+      "id": "00015-INV-2024-0015",
+      "invoice_number": "INV-2024-0015",
+      "total": 31319.35
+    },
+    {
+      "id": "00016-INV-2026-0016",
+      "invoice_number": "INV-2026-0016",
+      "total": 4132.5
+    },
+    {
+      "id": "00017-INV-2025-0017",
+      "invoice_number": "INV-2025-0017",
+      "total": 2604.99
+    },
+    {
+      "id": "00018-INV-2026-0018",
+      "invoice_number": "INV-2026-0018",
+      "total": 24812.66
+    },
+    {
+      "id": "00019-INV-2026-0019",
+      "invoice_number": "INV-2026-0019",
+      "total": 15794.71
+    },
+    {
+      "id": "00020-INV-2024-0020",
+      "invoice_number": "INV-2024-0020",
+      "total": 14611.49
+    },
+    {
+      "id": "00021-INV-2025-0021",
+      "invoice_number": "INV-2025-0021",
+      "total": 27551.98
+    },
+    {
+      "id": "00022-INV-2025-0022",
+      "invoice_number": "INV-2025-0022",
+      "total": 35542.49
+    },
+    {
+      "id": "00023-INV-2024-0023",
+      "invoice_number": "INV-2024-0023",
+      "total": 17017.55
+    },
+    {
+      "id": "00024-INV-2025-0024",
+      "invoice_number": "INV-2025-0024",
+      "total": 14484.04
+    },
+    {
+      "id": "00025-INV-2026-0025",
+      "invoice_number": "INV-2026-0025",
+      "total": 39175.63
+    },
+    {
+      "id": "00026-INV-2024-0026",
+      "invoice_number": "INV-2024-0026",
+      "total": 58544.01
+    },
+    {
+      "id": "00027-INV-2025-0027",
+      "invoice_number": "INV-2025-0027",
+      "total": 19385.81
+    },
+    {
+      "id": "00028-INV-2024-0028",
+      "invoice_number": "INV-2024-0028",
+      "total": 35770.64
+    },
+    {
+      "id": "00029-INV-2025-0029",
+      "invoice_number": "INV-2025-0029",
+      "total": 54585.2
+    },
+    {
+      "id": "00030-INV-2024-0030",
+      "invoice_number": "INV-2024-0030",
+      "total": 14991.34
+    },
+    {
+      "id": "00031-INV-2024-0031",
+      "invoice_number": "INV-2024-0031",
+      "total": 36456.74
+    },
+    {
+      "id": "00032-INV-2025-0032",
+      "invoice_number": "INV-2025-0032",
+      "total": 19873.3
+    },
+    {
+      "id": "00033-INV-2025-0033",
+      "invoice_number": "INV-2025-0033",
+      "total": 20420.64
+    },
+    {
+      "id": "00034-INV-2025-0034",
+      "invoice_number": "INV-2025-0034",
+      "total": 29729.77
+    },
+    {
+      "id": "00035-INV-2025-0035",
+      "invoice_number": "INV-2025-0035",
+      "total": 11262.97
+    },
+    {
+      "id": "00036-INV-2024-0036",
+      "invoice_number": "INV-2024-0036",
+      "total": 25559.62
+    },
+    {
+      "id": "00037-INV-2025-0037",
+      "invoice_number": "INV-2025-0037",
+      "total": 41598.95
+    },
+    {
+      "id": "00038-INV-2025-0038",
+      "invoice_number": "INV-2025-0038",
+      "total": 51721.48
+    },
+    {
+      "id": "00039-INV-2024-0039",
+      "invoice_number": "INV-2024-0039",
+      "total": 42270.3
+    }
+  ]
+}

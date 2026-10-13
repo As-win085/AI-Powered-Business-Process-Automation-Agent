@@ -1,0 +1,38 @@
+{
+  "id": 31,
+  "supplier": {
+    "name": "Zeppelin Electronics",
+    "address": "5-15 Shinbashi, Tokyo, Japan"
+  },
+  "customer": "Summit Workspaces",
+  "invoice_number": "INV-2024-0031",
+  "invoice_date": "2024-10-21",
+  "due_date": "2024-03-21",
+  "currency": "USD",
+  "subtotal": 35278.72,
+  "tax_total": 1178.02,
+  "total": 36456.74,
+  "line_items": [
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 37,
+      "unit_price": 474.82,
+      "tax_rate": 0.0,
+      "line_total": 17568.34
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 8,
+      "unit_price": 281.25,
+      "tax_rate": 0.18,
+      "line_total": 2250.0
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 39,
+      "unit_price": 396.42,
+      "tax_rate": 0.05,
+      "line_total": 15460.38
+    }
+  ]
+}

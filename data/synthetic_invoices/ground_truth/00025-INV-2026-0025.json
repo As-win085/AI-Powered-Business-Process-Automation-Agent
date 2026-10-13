@@ -1,0 +1,52 @@
+{
+  "id": 25,
+  "supplier": {
+    "name": "Vertex Manufacturing Inc",
+    "address": "4400 Lithium Ave, Austin, USA"
+  },
+  "customer": "Riverside Hotel Group",
+  "invoice_number": "INV-2026-0025",
+  "invoice_date": "2026-03-08",
+  "due_date": "2026-01-08",
+  "currency": "USD",
+  "subtotal": 33849.14,
+  "tax_total": 5326.49,
+  "total": 39175.63,
+  "line_items": [
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 8,
+      "unit_price": 284.16,
+      "tax_rate": 0.05,
+      "line_total": 2273.28
+    },
+    {
+      "description": "Safety goggles, ANSI rated",
+      "quantity": 17,
+      "unit_price": 384.61,
+      "tax_rate": 0.05,
+      "line_total": 6538.37
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 39,
+      "unit_price": 482.05,
+      "tax_rate": 0.25,
+      "line_total": 18799.95
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 11,
+      "unit_price": 482.54,
+      "tax_rate": 0.0,
+      "line_total": 5307.94
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 2,
+      "unit_price": 464.8,
+      "tax_rate": 0.2,
+      "line_total": 929.6
+    }
+  ]
+}

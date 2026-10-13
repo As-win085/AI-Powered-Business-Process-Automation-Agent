@@ -1,0 +1,59 @@
+{
+  "id": 21,
+  "supplier": {
+    "name": "Onyx Construction Materials",
+    "address": "300 Cement Rd, Toronto, Canada"
+  },
+  "customer": "Falcon Freight Co.",
+  "invoice_number": "INV-2025-0021",
+  "invoice_date": "2025-10-27",
+  "due_date": "2025-03-27",
+  "currency": "USD",
+  "subtotal": 23897.75,
+  "tax_total": 3654.23,
+  "total": 27551.98,
+  "line_items": [
+    {
+      "description": "Safety goggles, ANSI rated",
+      "quantity": 11,
+      "unit_price": 373.11,
+      "tax_rate": 0.18,
+      "line_total": 4104.21
+    },
+    {
+      "description": "Safety goggles, ANSI rated",
+      "quantity": 17,
+      "unit_price": 377.13,
+      "tax_rate": 0.25,
+      "line_total": 6411.21
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 34,
+      "unit_price": 244.88,
+      "tax_rate": 0.05,
+      "line_total": 8325.92
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 29,
+      "unit_price": 43.35,
+      "tax_rate": 0.12,
+      "line_total": 1257.15
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 18,
+      "unit_price": 171.24,
+      "tax_rate": 0.2,
+      "line_total": 3082.32
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 9,
+      "unit_price": 79.66,
+      "tax_rate": 0.18,
+      "line_total": 716.94
+    }
+  ]
+}

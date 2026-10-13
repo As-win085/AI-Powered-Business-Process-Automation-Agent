@@ -1,0 +1,52 @@
+{
+  "id": 37,
+  "supplier": {
+    "name": "Silverline Logistics",
+    "address": "18 Docklands Blvd, Singapore"
+  },
+  "customer": "Crystal Peak Resorts",
+  "invoice_number": "INV-2025-0037",
+  "invoice_date": "2025-08-16",
+  "due_date": "2025-01-16",
+  "currency": "USD",
+  "subtotal": 35251.4,
+  "tax_total": 6347.55,
+  "total": 41598.95,
+  "line_items": [
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 10,
+      "unit_price": 194.88,
+      "tax_rate": 0.2,
+      "line_total": 1948.8
+    },
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 9,
+      "unit_price": 432.69,
+      "tax_rate": 0.12,
+      "line_total": 3894.21
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 22,
+      "unit_price": 467.45,
+      "tax_rate": 0.2,
+      "line_total": 10283.9
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 1,
+      "unit_price": 145.01,
+      "tax_rate": 0.12,
+      "line_total": 145.01
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 38,
+      "unit_price": 499.46,
+      "tax_rate": 0.18,
+      "line_total": 18979.48
+    }
+  ]
+}

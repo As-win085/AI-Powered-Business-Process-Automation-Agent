@@ -1,0 +1,59 @@
+{
+  "id": 32,
+  "supplier": {
+    "name": "Quanta Office Solutions",
+    "address": "8 Rue de la Paix, Paris, France"
+  },
+  "customer": "Orchard Foods Inc.",
+  "invoice_number": "INV-2025-0032",
+  "invoice_date": "2025-10-20",
+  "due_date": "2025-03-20",
+  "currency": "USD",
+  "subtotal": 18217.17,
+  "tax_total": 1656.13,
+  "total": 19873.3,
+  "line_items": [
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 7,
+      "unit_price": 474.06,
+      "tax_rate": 0.05,
+      "line_total": 3318.42
+    },
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 14,
+      "unit_price": 136.0,
+      "tax_rate": 0.0,
+      "line_total": 1904.0
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 16,
+      "unit_price": 91.04,
+      "tax_rate": 0.0,
+      "line_total": 1456.64
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 1,
+      "unit_price": 207.22,
+      "tax_rate": 0.25,
+      "line_total": 207.22
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 31,
+      "unit_price": 149.17,
+      "tax_rate": 0.05,
+      "line_total": 4624.27
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 19,
+      "unit_price": 352.98,
+      "tax_rate": 0.18,
+      "line_total": 6706.62
+    }
+  ]
+}

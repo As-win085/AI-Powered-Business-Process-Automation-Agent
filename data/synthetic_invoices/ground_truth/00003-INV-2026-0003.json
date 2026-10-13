@@ -1,0 +1,59 @@
+{
+  "id": 3,
+  "supplier": {
+    "name": "Vertex Manufacturing Inc",
+    "address": "4400 Lithium Ave, Austin, USA"
+  },
+  "customer": "Crystal Peak Resorts",
+  "invoice_number": "INV-2026-0003",
+  "invoice_date": "2026-11-21",
+  "due_date": "2026-05-21",
+  "currency": "USD",
+  "subtotal": 22013.64,
+  "tax_total": 3379.53,
+  "total": 25393.17,
+  "line_items": [
+    {
+      "description": "Heat-resistant gloves, pair",
+      "quantity": 11,
+      "unit_price": 269.4,
+      "tax_rate": 0.05,
+      "line_total": 2963.4
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 30,
+      "unit_price": 192.83,
+      "tax_rate": 0.25,
+      "line_total": 5784.9
+    },
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 36,
+      "unit_price": 113.71,
+      "tax_rate": 0.12,
+      "line_total": 4093.56
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 15,
+      "unit_price": 411.79,
+      "tax_rate": 0.12,
+      "line_total": 6176.85
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 18,
+      "unit_price": 37.76,
+      "tax_rate": 0.2,
+      "line_total": 679.68
+    },
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 21,
+      "unit_price": 110.25,
+      "tax_rate": 0.18,
+      "line_total": 2315.25
+    }
+  ]
+}

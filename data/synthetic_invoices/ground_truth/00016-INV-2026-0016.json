@@ -1,0 +1,31 @@
+{
+  "id": 16,
+  "supplier": {
+    "name": "Quanta Office Solutions",
+    "address": "8 Rue de la Paix, Paris, France"
+  },
+  "customer": "Falcon Freight Co.",
+  "invoice_number": "INV-2026-0016",
+  "invoice_date": "2026-09-13",
+  "due_date": "2026-08-13",
+  "currency": "USD",
+  "subtotal": 3689.73,
+  "tax_total": 442.77,
+  "total": 4132.5,
+  "line_items": [
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 17,
+      "unit_price": 93.39,
+      "tax_rate": 0.12,
+      "line_total": 1587.63
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 7,
+      "unit_price": 300.3,
+      "tax_rate": 0.12,
+      "line_total": 2102.1
+    }
+  ]
+}

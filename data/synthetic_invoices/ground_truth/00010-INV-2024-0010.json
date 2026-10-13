@@ -1,0 +1,45 @@
+{
+  "id": 10,
+  "supplier": {
+    "name": "Nimbus Trading Co.",
+    "address": "22 Harbour Way, Southampton, UK"
+  },
+  "customer": "Orchard Foods Inc.",
+  "invoice_number": "INV-2024-0010",
+  "invoice_date": "2024-07-09",
+  "due_date": "2024-02-09",
+  "currency": "USD",
+  "subtotal": 16356.62,
+  "tax_total": 2538.49,
+  "total": 18895.11,
+  "line_items": [
+    {
+      "description": "Cable management kit",
+      "quantity": 36,
+      "unit_price": 332.63,
+      "tax_rate": 0.18,
+      "line_total": 11974.68
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 13,
+      "unit_price": 151.87,
+      "tax_rate": 0.0,
+      "line_total": 1974.31
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 35,
+      "unit_price": 35.17,
+      "tax_rate": 0.12,
+      "line_total": 1230.95
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 4,
+      "unit_price": 294.17,
+      "tax_rate": 0.2,
+      "line_total": 1176.68
+    }
+  ]
+}

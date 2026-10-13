@@ -1,0 +1,52 @@
+{
+  "id": 34,
+  "supplier": {
+    "name": "Quanta Office Solutions",
+    "address": "8 Rue de la Paix, Paris, France"
+  },
+  "customer": "Summit Workspaces",
+  "invoice_number": "INV-2025-0034",
+  "invoice_date": "2025-02-20",
+  "due_date": "2025-06-20",
+  "currency": "USD",
+  "subtotal": 26654.14,
+  "tax_total": 3075.63,
+  "total": 29729.77,
+  "line_items": [
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 21,
+      "unit_price": 303.84,
+      "tax_rate": 0.0,
+      "line_total": 6380.64
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 15,
+      "unit_price": 481.15,
+      "tax_rate": 0.2,
+      "line_total": 7217.25
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 2,
+      "unit_price": 499.79,
+      "tax_rate": 0.25,
+      "line_total": 999.58
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 37,
+      "unit_price": 24.91,
+      "tax_rate": 0.05,
+      "line_total": 921.67
+    },
+    {
+      "description": "Safety goggles, ANSI rated",
+      "quantity": 34,
+      "unit_price": 327.5,
+      "tax_rate": 0.12,
+      "line_total": 11135.0
+    }
+  ]
+}

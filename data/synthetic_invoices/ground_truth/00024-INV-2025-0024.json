@@ -1,0 +1,45 @@
+{
+  "id": 24,
+  "supplier": {
+    "name": "Quanta Office Solutions",
+    "address": "8 Rue de la Paix, Paris, France"
+  },
+  "customer": "Orchard Foods Inc.",
+  "invoice_number": "INV-2025-0024",
+  "invoice_date": "2025-04-15",
+  "due_date": "2025-02-15",
+  "currency": "USD",
+  "subtotal": 12175.47,
+  "tax_total": 2308.57,
+  "total": 14484.04,
+  "line_items": [
+    {
+      "description": "Cable management kit",
+      "quantity": 18,
+      "unit_price": 377.24,
+      "tax_rate": 0.18,
+      "line_total": 6790.32
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 6,
+      "unit_price": 237.8,
+      "tax_rate": 0.25,
+      "line_total": 1426.8
+    },
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 4,
+      "unit_price": 499.95,
+      "tax_rate": 0.12,
+      "line_total": 1999.8
+    },
+    {
+      "description": "USB-C docking station",
+      "quantity": 5,
+      "unit_price": 391.71,
+      "tax_rate": 0.25,
+      "line_total": 1958.55
+    }
+  ]
+}

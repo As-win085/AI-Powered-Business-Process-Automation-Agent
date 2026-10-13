@@ -1,0 +1,38 @@
+{
+  "id": 12,
+  "supplier": {
+    "name": "Atlas Power Systems",
+    "address": "66 Grid Street, Mumbai, India"
+  },
+  "customer": "Bluewater Retail Ltd",
+  "invoice_number": "INV-2024-0012",
+  "invoice_date": "2024-09-07",
+  "due_date": "2024-03-07",
+  "currency": "USD",
+  "subtotal": 10797.7,
+  "tax_total": 2291.22,
+  "total": 13088.92,
+  "line_items": [
+    {
+      "description": "LED panel light 60x60cm",
+      "quantity": 5,
+      "unit_price": 440.24,
+      "tax_rate": 0.12,
+      "line_total": 2201.2
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 11,
+      "unit_price": 221.9,
+      "tax_rate": 0.2,
+      "line_total": 2440.9
+    },
+    {
+      "description": "Label printer with 6 rolls",
+      "quantity": 20,
+      "unit_price": 307.78,
+      "tax_rate": 0.25,
+      "line_total": 6155.6
+    }
+  ]
+}

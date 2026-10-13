@@ -1,0 +1,38 @@
+{
+  "id": 33,
+  "supplier": {
+    "name": "Quanta Office Solutions",
+    "address": "8 Rue de la Paix, Paris, France"
+  },
+  "customer": "Northbeam Energy LLC",
+  "invoice_number": "INV-2025-0033",
+  "invoice_date": "2025-02-18",
+  "due_date": "2025-06-18",
+  "currency": "USD",
+  "subtotal": 16987.21,
+  "tax_total": 3433.43,
+  "total": 20420.64,
+  "line_items": [
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 10,
+      "unit_price": 40.35,
+      "tax_rate": 0.05,
+      "line_total": 403.5
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 39,
+      "unit_price": 375.73,
+      "tax_rate": 0.2,
+      "line_total": 14653.47
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 29,
+      "unit_price": 66.56,
+      "tax_rate": 0.25,
+      "line_total": 1930.24
+    }
+  ]
+}

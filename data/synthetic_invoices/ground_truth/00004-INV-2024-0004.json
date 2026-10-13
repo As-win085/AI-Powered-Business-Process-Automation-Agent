@@ -1,0 +1,59 @@
+{
+  "id": 4,
+  "supplier": {
+    "name": "Nimbus Trading Co.",
+    "address": "22 Harbour Way, Southampton, UK"
+  },
+  "customer": "Crystal Peak Resorts",
+  "invoice_number": "INV-2024-0004",
+  "invoice_date": "2024-04-24",
+  "due_date": "2024-10-24",
+  "currency": "USD",
+  "subtotal": 31253.52,
+  "tax_total": 3579.36,
+  "total": 34832.88,
+  "line_items": [
+    {
+      "description": "Cable management kit",
+      "quantity": 38,
+      "unit_price": 202.7,
+      "tax_rate": 0.05,
+      "line_total": 7702.6
+    },
+    {
+      "description": "Office chair - ergonomic mesh",
+      "quantity": 33,
+      "unit_price": 249.29,
+      "tax_rate": 0.0,
+      "line_total": 8226.57
+    },
+    {
+      "description": "Industrial lubricant, 5L drum",
+      "quantity": 10,
+      "unit_price": 315.59,
+      "tax_rate": 0.25,
+      "line_total": 3155.9
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 39,
+      "unit_price": 36.45,
+      "tax_rate": 0.18,
+      "line_total": 1421.55
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 30,
+      "unit_price": 266.91,
+      "tax_rate": 0.2,
+      "line_total": 8007.3
+    },
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 8,
+      "unit_price": 342.45,
+      "tax_rate": 0.2,
+      "line_total": 2739.6
+    }
+  ]
+}

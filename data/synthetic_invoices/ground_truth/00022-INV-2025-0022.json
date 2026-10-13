@@ -1,0 +1,52 @@
+{
+  "id": 22,
+  "supplier": {
+    "name": "Borealis Components GmbH",
+    "address": "Industriestrasse 12, Berlin, Germany"
+  },
+  "customer": "Orchard Foods Inc.",
+  "invoice_number": "INV-2025-0022",
+  "invoice_date": "2025-06-18",
+  "due_date": "2025-01-18",
+  "currency": "USD",
+  "subtotal": 31664.65,
+  "tax_total": 3877.84,
+  "total": 35542.49,
+  "line_items": [
+    {
+      "description": "Stainless steel bolts (box of 500)",
+      "quantity": 14,
+      "unit_price": 417.28,
+      "tax_rate": 0.18,
+      "line_total": 5841.92
+    },
+    {
+      "description": "Wire shelving unit 4-tier",
+      "quantity": 2,
+      "unit_price": 429.08,
+      "tax_rate": 0.2,
+      "line_total": 858.16
+    },
+    {
+      "description": "Cable management kit",
+      "quantity": 31,
+      "unit_price": 7.92,
+      "tax_rate": 0.12,
+      "line_total": 245.52
+    },
+    {
+      "description": "Pallet wraps, 1200m roll",
+      "quantity": 25,
+      "unit_price": 427.46,
+      "tax_rate": 0.18,
+      "line_total": 10686.5
+    },
+    {
+      "description": "Paper ream A4, 80gsm",
+      "quantity": 35,
+      "unit_price": 400.93,
+      "tax_rate": 0.05,
+      "line_total": 14032.55
+    }
+  ]
+}
