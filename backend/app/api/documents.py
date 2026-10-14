@@ -106,16 +106,18 @@ def download_document(
     )
 
 
-@router.post("/{document_id}/process", response_model=DocumentRead)
+@router.post("/{document_id}/process", response_model=DocumentRead, status_code=status.HTTP_202_ACCEPTED)
 def process_document(
     document_id: uuid.UUID,
     context: TenantContext = Depends(require_permission(Permission.DOCUMENT_UPLOAD)),
     db: Session = Depends(get_db),
 ) -> DocumentRead:
-    """Extract per-page text (with OCR fallback) synchronously and return the update."""
-    document = document_service.process_document(
+    """Queue document processing and return immediately (async)."""
+    document = document_service.get_document(
         db, tenant_id=context.tenant_id, document_id=document_id
     )
+    document_service.enqueue_document_processing(document.id, db=db, tenant_id=context.tenant_id)
+    db.refresh(document)
     return DocumentRead.model_validate(document)
 
 

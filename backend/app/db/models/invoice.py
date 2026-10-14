@@ -1,6 +1,7 @@
-import uuid
+﻿import uuid
 from datetime import date
 from decimal import Decimal
+from typing import Any
 
 from sqlalchemy import (
     CheckConstraint,
@@ -12,6 +13,7 @@ from sqlalchemy import (
     String,
     UniqueConstraint,
 )
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base, TenantScopedMixin, TimestampMixin, UUIDPrimaryKeyMixin
@@ -40,8 +42,7 @@ class Invoice(UUIDPrimaryKeyMixin, TenantScopedMixin, TimestampMixin, Base):
             name="uq_invoices_supplier_number",
         ),
         CheckConstraint(
-            "state in ('uploaded', 'queued', 'processing', 'needs_review', "
-            "'ready_for_approval', 'approved', 'rejected', 'correction_requested', 'failed')",
+            "state in ('uploaded', 'queued', 'processing', 'needs_review', 'ready_for_approval', 'approved', 'rejected', 'correction_requested', 'failed')",
             name="ck_invoices_state",
         ),
     )
@@ -67,12 +68,13 @@ class Invoice(UUIDPrimaryKeyMixin, TenantScopedMixin, TimestampMixin, Base):
         String(32), nullable=False, default="uploaded", server_default="uploaded"
     )
     risk_level: Mapped[str | None] = mapped_column(String(16), nullable=True)
+    extracted_json: Mapped[dict[str, Any] | None] = mapped_column(JSONB, nullable=True)
+    corrected_json: Mapped[dict[str, Any] | None] = mapped_column(JSONB, nullable=True)
 
 
 class InvoiceLineItem(UUIDPrimaryKeyMixin, TenantScopedMixin, Base):
     __tablename__ = "invoice_line_items"
     __table_args__ = (
-        # Composite FK keeps line items within the same tenant as their invoice.
         ForeignKeyConstraint(
             ["tenant_id", "invoice_id"],
             ["invoices.tenant_id", "invoices.id"],
@@ -88,3 +90,6 @@ class InvoiceLineItem(UUIDPrimaryKeyMixin, TenantScopedMixin, Base):
     unit_price: Mapped[Decimal | None] = mapped_column(Numeric(14, 2), nullable=True)
     tax_amount: Mapped[Decimal | None] = mapped_column(Numeric(14, 2), nullable=True)
     line_total: Mapped[Decimal | None] = mapped_column(Numeric(14, 2), nullable=True)
+
+
+

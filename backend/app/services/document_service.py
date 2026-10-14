@@ -137,6 +137,10 @@ def process_document(db: Session, *, tenant_id: uuid.UUID, document_id: uuid.UUI
     document as ``failed`` with a human-readable reason.
     """
     document = get_document(db, tenant_id=tenant_id, document_id=document_id)
+
+    if document.status in ("needs_review", "ready_for_approval", "approved"):
+        return document
+
     job = _start_job(db, tenant_id, document_id)
     now = datetime.now(UTC)
 
@@ -147,19 +151,23 @@ def process_document(db: Session, *, tenant_id: uuid.UUID, document_id: uuid.UUI
         pages = extraction_service.extract_pdf_text(content)
     except extraction_service.ExtractionError as exc:
         reason = str(exc)
-        document.status = "failed"
-        document.error = reason
+        if document.status not in ("failed",):  # only log first meaningful failure; avoid duplicates
+            document.status = "failed"
+            document.error = reason
         job.status = "failed"
         job.error = reason
         job.finished_at = now
-        audit_service.log_audit(
-            db,
-            tenant_id=tenant_id,
-            action="document.processing_failed",
-            entity_type="document",
-            entity_id=document.id,
-            details={"reason": reason},
-        )
+        try:
+            audit_service.log_audit(
+                db,
+                tenant_id=tenant_id,
+                action="document.processing_failed",
+                entity_type="document",
+                entity_id=document.id,
+                details={"reason": reason},
+            )
+        except Exception:
+            pass
         db.commit()
         return document
 
@@ -190,18 +198,21 @@ def process_document(db: Session, *, tenant_id: uuid.UUID, document_id: uuid.UUI
     job.finished_at = now
     job.error = None
 
-    audit_service.log_audit(
-        db,
-        tenant_id=tenant_id,
-        action="document.processed",
-        entity_type="document",
-        entity_id=document.id,
-        details={
-            "pages": len(pages),
-            "ocr_pages": sum(1 for page in pages if page.source == "ocr"),
-            "embedded_pages": sum(1 for page in pages if page.source == "embedded"),
-        },
-    )
+    try:
+        audit_service.log_audit(
+            db,
+            tenant_id=tenant_id,
+            action="document.processed",
+            entity_type="document",
+            entity_id=document.id,
+            details={
+                "pages": len(pages),
+                "ocr_pages": sum(1 for page in pages if page.source == "ocr"),
+                "embedded_pages": sum(1 for page in pages if page.source == "embedded"),
+            },
+        )
+    except Exception:
+        pass
     db.commit()
     return document
 
@@ -222,14 +233,25 @@ def list_page_text(
     return list(db.scalars(stmt).all())
 
 
-def enqueue_document_processing(document_id: uuid.UUID) -> None:
-    """Submit the document to Celery for asynchronous processing when enabled.
-
-    If the broker is unreachable the document simply stays ``uploaded``; the UI
-    allows processing it later via the synchronous process endpoint.
-    """
+def enqueue_document_processing(
+    document_id: uuid.UUID,
+    *,
+    db: Session | None = None,
+    tenant_id: uuid.UUID | None = None,
+) -> None:
+    """Submit the document to Celery for asynchronous processing when enabled."""
     if not settings.auto_process_documents:
         return
+
+    if db is not None and tenant_id is not None:
+        with contextlib.suppress(Exception):
+            document = get_document(db, tenant_id=tenant_id, document_id=document_id)
+            if document.status in ("processing", "needs_review", "ready_for_approval"):
+                return
+            document.status = "queued"
+            _start_job(db, tenant_id, document_id)
+            db.commit()
+
     from app.workers.tasks import process_document_task
 
     with contextlib.suppress(Exception):  # broker may be down during local development
@@ -254,9 +276,10 @@ def _start_job(db: Session, tenant_id: uuid.UUID, document_id: uuid.UUID) -> Pro
             idempotency_key=f"{document_id}:{uuid.uuid4()}",
         )
         db.add(latest)
-    latest.status = "running"
-    latest.attempts = (latest.attempts or 0) + 1
-    latest.error = None
-    latest.started_at = datetime.now(UTC)
+    if latest.status != "running":
+        latest.status = "running"
+        latest.attempts = (latest.attempts or 0) + 1
+        latest.error = None
+        latest.started_at = datetime.now(UTC)
     db.flush()
     return latest
