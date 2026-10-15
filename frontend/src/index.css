@@ -383,3 +383,56 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+.badge-open {
+  background: #e5f6ec;
+  color: var(--ok);
+}
+
+.badge-closed {
+  background: #e7ecf2;
+  color: var(--muted);
+}
+
+.badge-cancelled {
+  background: #fdeceb;
+  color: var(--error);
+}
+
+.po-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.po-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.badge-high {
+  background: #fdeceb;
+  color: var(--error);
+}
+
+.badge-medium {
+  background: #fff4e0;
+  color: #a66800;
+}
+
+.badge-low {
+  background: #e5f6ec;
+  color: var(--ok);
+}
+
+.reason-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+}
+
+.reason-list li {
+  margin-bottom: 0.15rem;
+}

@@ -16,6 +16,8 @@ export default function Layout() {
         </Link>
         <nav className="topbar-nav">
           <Link to="/documents">Documents</Link>
+          <Link to="/purchase-orders">Purchase Orders</Link>
+          <Link to="/anomalies">Anomalies</Link>
           {canApprove && <Link to="/approvals">Approvals</Link>}
         </nav>
         <div className="topbar-right">

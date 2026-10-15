@@ -4,10 +4,12 @@ from decimal import Decimal
 from typing import Any
 
 from sqlalchemy import (
+    Boolean,
     CheckConstraint,
     Date,
     ForeignKey,
     ForeignKeyConstraint,
+    Index,
     Integer,
     Numeric,
     String,
@@ -49,6 +51,7 @@ class Invoice(UUIDPrimaryKeyMixin, TenantScopedMixin, TimestampMixin, Base):
             "'rejected', 'correction_requested', 'failed')",
             name="ck_invoices_state",
         ),
+        Index("ix_invoices_tenant_anomaly", "tenant_id", "anomaly_flagged"),
     )
 
     document_id: Mapped[uuid.UUID | None] = mapped_column(
@@ -62,6 +65,10 @@ class Invoice(UUIDPrimaryKeyMixin, TenantScopedMixin, TimestampMixin, Base):
     )
     invoice_number: Mapped[str | None] = mapped_column(String(128), nullable=True)
     normalized_invoice_number: Mapped[str | None] = mapped_column(String(128), nullable=True)
+    po_number: Mapped[str | None] = mapped_column(String(128), nullable=True)
+    normalized_po_number: Mapped[str | None] = mapped_column(
+        String(128), nullable=True, index=True
+    )
     invoice_date: Mapped[date | None] = mapped_column(Date, nullable=True)
     due_date: Mapped[date | None] = mapped_column(Date, nullable=True)
     currency: Mapped[str | None] = mapped_column(String(3), nullable=True)
@@ -72,6 +79,12 @@ class Invoice(UUIDPrimaryKeyMixin, TenantScopedMixin, TimestampMixin, Base):
         String(32), nullable=False, default="uploaded", server_default="uploaded"
     )
     risk_level: Mapped[str | None] = mapped_column(String(16), nullable=True)
+    anomaly_score: Mapped[Decimal | None] = mapped_column(Numeric(9, 6), nullable=True)
+    anomaly_model_version: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    anomaly_flagged: Mapped[bool] = mapped_column(
+        Boolean, nullable=False, default=False, server_default="false"
+    )
+    anomaly_reasons: Mapped[list[Any] | None] = mapped_column(JSONB, nullable=True)
     extracted_json: Mapped[dict[str, Any] | None] = mapped_column(JSONB, nullable=True)
     corrected_json: Mapped[dict[str, Any] | None] = mapped_column(JSONB, nullable=True)
 

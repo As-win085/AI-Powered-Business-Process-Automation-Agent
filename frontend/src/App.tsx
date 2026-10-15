@@ -4,9 +4,11 @@ import Layout from "./components/Layout";
 import RequireAuth from "./components/RequireAuth";
 import RequireGuest from "./components/RequireGuest";
 import Approvals from "./pages/Approvals";
+import Anomalies from "./pages/Anomalies";
 import DocumentViewer from "./pages/DocumentViewer";
 import Documents from "./pages/Documents";
 import Login from "./pages/Login";
+import PurchaseOrders from "./pages/PurchaseOrders";
 
 export default function App() {
   return (
@@ -30,6 +32,8 @@ export default function App() {
           <Route path="/" element={<Navigate to="/documents" replace />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="/documents/:id" element={<DocumentViewer />} />
+          <Route path="/purchase-orders" element={<PurchaseOrders />} />
+          <Route path="/anomalies" element={<Anomalies />} />
           <Route path="/approvals" element={<Approvals />} />
         </Route>
         <Route path="*" element={<Navigate to="/documents" replace />} />

@@ -9,6 +9,8 @@ class Permission(StrEnum):
     DOCUMENT_UPLOAD = "document:upload"
     INVOICE_READ = "invoice:read"
     INVOICE_CORRECT = "invoice:correct"
+    PURCHASE_ORDER_READ = "purchase_order:read"
+    PURCHASE_ORDER_WRITE = "purchase_order:write"
     APPROVAL_DECIDE = "approval:decide"
     AUDIT_READ = "audit:read"
     ANALYTICS_READ = "analytics:read"
@@ -22,12 +24,15 @@ ROLE_PERMISSIONS: dict[str, set[Permission]] = {
         Permission.DOCUMENT_UPLOAD,
         Permission.INVOICE_READ,
         Permission.INVOICE_CORRECT,
+        Permission.PURCHASE_ORDER_READ,
+        Permission.PURCHASE_ORDER_WRITE,
         Permission.ANALYTICS_READ,
     },
     "approver": {
         Permission.TENANT_READ,
         Permission.DOCUMENT_READ,
         Permission.INVOICE_READ,
+        Permission.PURCHASE_ORDER_READ,
         Permission.APPROVAL_DECIDE,
         Permission.ANALYTICS_READ,
     },
@@ -35,6 +40,7 @@ ROLE_PERMISSIONS: dict[str, set[Permission]] = {
         Permission.TENANT_READ,
         Permission.DOCUMENT_READ,
         Permission.INVOICE_READ,
+        Permission.PURCHASE_ORDER_READ,
         Permission.AUDIT_READ,
         Permission.ANALYTICS_READ,
     },

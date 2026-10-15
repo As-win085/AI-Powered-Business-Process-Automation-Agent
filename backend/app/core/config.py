@@ -67,6 +67,18 @@ class Settings(BaseSettings):
     approval_finance_role: str = "finance"
     approval_director_role: str = "admin"
 
+    # Purchase order matching tolerances (all configurable via environment).
+    po_match_amount_tolerance_abs: float = 0.01
+    po_match_amount_tolerance_pct: float = 0.01
+    po_match_price_tolerance_pct: float = 0.02
+    po_match_quantity_tolerance_pct: float = 0.0
+
+    # Anomaly detection (unsupervised Isolation Forest over supplier history).
+    anomaly_feature_window_days: int = 30
+    anomaly_flag_percentile: float = 90.0
+    anomaly_contamination: float = 0.05
+    anomaly_min_history: int = 3
+
     @field_validator("storage_root", mode="after")
     @classmethod
     def _resolve_storage_root(cls, value: Path) -> Path:
@@ -79,6 +91,11 @@ class Settings(BaseSettings):
     @property
     def max_upload_size_bytes(self) -> int:
         return self.max_upload_size_mb * 1024 * 1024
+
+    @property
+    def anomaly_model_dir(self) -> Path:
+        """Directory holding saved anomaly models, kept inside the storage root."""
+        return self.storage_root / "models" / "anomaly"
 
     @property
     def allowed_upload_content_types(self) -> dict[str, tuple[str, ...]]:

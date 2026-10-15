@@ -10,12 +10,18 @@ from sqlalchemy.orm import Session
 from app.api.deps import require_permission
 from app.core.permissions import Permission
 from app.core.tenant_context import TenantContext
-from app.db.models.invoice import Invoice
+from app.db.models.invoice import Invoice, InvoiceLineItem
 from app.db.models.supplier import Supplier
 from app.db.models.validation import ValidationResult
 from app.db.session import get_db
 from app.schemas.invoice import InvoiceCreate, InvoiceRead, InvoiceUpdate
-from app.services import approval_service, audit_service, duplicate_service, workflow_service
+from app.services import (
+    approval_service,
+    audit_service,
+    duplicate_service,
+    po_matching_service,
+    workflow_service,
+)
 from app.services.duplicate_detection import normalize_invoice_number, normalize_supplier_name
 
 router = APIRouter(prefix="/invoices", tags=["invoices"])
@@ -73,6 +79,10 @@ def create_invoice(
         normalized_invoice_number=(
             normalize_invoice_number(payload.invoice_number) if payload.invoice_number else None
         ),
+        po_number=payload.po_number,
+        normalized_po_number=(
+            normalize_invoice_number(payload.po_number) if payload.po_number else None
+        ),
         invoice_date=payload.invoice_date,
         due_date=payload.due_date,
         currency=payload.currency,
@@ -83,6 +93,22 @@ def create_invoice(
     )
     db.add(invoice)
     db.flush()
+
+    for index, item in enumerate(payload.line_items or [], start=1):
+        db.add(
+            InvoiceLineItem(
+                tenant_id=context.tenant_id,
+                invoice_id=invoice.id,
+                line_number=item.line_number if item.line_number is not None else index,
+                description=item.description,
+                quantity=item.quantity,
+                unit_price=item.unit_price,
+                tax_amount=item.tax_amount,
+                line_total=item.line_total,
+            )
+        )
+    db.flush()
+
     audit_service.log_audit(
         db,
         tenant_id=context.tenant_id,
@@ -179,6 +205,13 @@ def update_invoice(
         if hasattr(invoice, field) and field not in ("line_items",):
             setattr(invoice, field, value)
 
+    if "po_number" in update_data:
+        invoice.normalized_po_number = (
+            normalize_invoice_number(update_data["po_number"])
+            if update_data["po_number"]
+            else None
+        )
+
     corrected = dict(invoice.corrected_json or {})
     if update_data:
         corrected.update({k: str(v) for k, v in update_data.items() if k != "line_items"})
@@ -259,4 +292,59 @@ def check_duplicates(
     )
     db.commit()
     return {"invoice_id": str(invoice.id), "warnings": results}
+
+
+@router.get("/{invoice_id}/po-match")
+def get_po_match(
+    invoice_id: uuid.UUID,
+    db: Session = Depends(get_db),
+    context: TenantContext = Depends(require_permission(Permission.INVOICE_READ)),
+):
+    """Return stored purchase-order match findings for an invoice."""
+    invoice = _get_invoice_or_404(db, context.tenant_id, invoice_id)
+    rows = po_matching_service.list_findings(
+        db, tenant_id=context.tenant_id, invoice_id=invoice.id
+    )
+    return {
+        "invoice_id": str(invoice.id),
+        "purchase_order_id": str(invoice.purchase_order_id) if invoice.purchase_order_id else None,
+        "findings": [
+            {
+                "rule_code": row.rule_code,
+                "severity": row.severity,
+                "message": row.message,
+                "details": row.details,
+            }
+            for row in rows
+        ],
+    }
+
+
+@router.post("/{invoice_id}/match-po")
+def match_po(
+    invoice_id: uuid.UUID,
+    db: Session = Depends(get_db),
+    context: TenantContext = Depends(require_permission(Permission.PURCHASE_ORDER_READ)),
+):
+    """Match an invoice against the tenant's purchase orders and store findings."""
+    invoice = _get_invoice_or_404(db, context.tenant_id, invoice_id)
+    outcome = po_matching_service.run_po_matching(
+        db, tenant_id=context.tenant_id, invoice=invoice
+    )
+    audit_service.log_audit(
+        db,
+        tenant_id=context.tenant_id,
+        actor_id=context.user.id,
+        entity_type="invoice",
+        entity_id=invoice.id,
+        action="invoice.match_po",
+        details={
+            "matched": outcome["matched"],
+            "purchase_order_id": outcome["purchase_order_id"],
+            "method": outcome["method"],
+        },
+    )
+    db.commit()
+    db.refresh(invoice)
+    return {"invoice_id": str(invoice.id), **outcome}
 

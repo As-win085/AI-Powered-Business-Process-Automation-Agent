@@ -19,6 +19,7 @@ class InvoiceLineItemData(BaseModel):
 
 class InvoiceData(BaseModel):
     invoice_number: str | None = None
+    po_number: str | None = None
     invoice_date: date | None = None
     due_date: date | None = None
     supplier_name: str | None = None
@@ -42,6 +43,8 @@ class InvoiceRead(BaseModel):
     purchase_order_id: Any | None = None
     invoice_number: str | None = None
     normalized_invoice_number: str | None = None
+    po_number: str | None = None
+    normalized_po_number: str | None = None
     invoice_date: date | None = None
     due_date: date | None = None
     currency: str | None = None
@@ -50,6 +53,10 @@ class InvoiceRead(BaseModel):
     total_amount: Decimal | None = None
     state: str
     risk_level: str | None = None
+    anomaly_score: Decimal | None = None
+    anomaly_model_version: str | None = None
+    anomaly_flagged: bool = False
+    anomaly_reasons: list[Any] | None = None
     extracted_json: dict[str, Any] | None = None
     corrected_json: dict[str, Any] | None = None
     created_at: Any | None = None
@@ -70,6 +77,7 @@ class InvoiceCreate(BaseModel):
     supplier_name: str | None = None
     supplier_tax_id: str | None = None
     invoice_number: str | None = None
+    po_number: str | None = None
     invoice_date: date | None = None
     due_date: date | None = None
     currency: str | None = Field(default=None, min_length=3, max_length=3)
@@ -81,6 +89,7 @@ class InvoiceCreate(BaseModel):
 
 class InvoiceUpdate(BaseModel):
     invoice_number: str | None = None
+    po_number: str | None = None
     invoice_date: date | None = None
     due_date: date | None = None
     supplier_name: str | None = None
