@@ -23,6 +23,8 @@ INVOICE_STATES = (
     "queued",
     "processing",
     "needs_review",
+    "validated",
+    "pending_approval",
     "ready_for_approval",
     "approved",
     "rejected",
@@ -42,7 +44,9 @@ class Invoice(UUIDPrimaryKeyMixin, TenantScopedMixin, TimestampMixin, Base):
             name="uq_invoices_supplier_number",
         ),
         CheckConstraint(
-            "state in ('uploaded', 'queued', 'processing', 'needs_review', 'ready_for_approval', 'approved', 'rejected', 'correction_requested', 'failed')",
+            "state in ('uploaded', 'queued', 'processing', 'needs_review', "
+            "'validated', 'pending_approval', 'ready_for_approval', 'approved', "
+            "'rejected', 'correction_requested', 'failed')",
             name="ck_invoices_state",
         ),
     )

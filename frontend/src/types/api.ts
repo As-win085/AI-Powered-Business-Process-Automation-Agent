@@ -76,3 +76,31 @@ export interface PageText {
   source: TextSource;
   engine: string;
 }
+
+export type ApprovalDecision =
+  | "pending"
+  | "approved"
+  | "rejected"
+  | "correction_requested";
+
+export interface Approval {
+  id: string;
+  tenant_id: string;
+  invoice_id: string;
+  approver_id: string | null;
+  decision: ApprovalDecision;
+  comment: string | null;
+  decided_at: string | null;
+  created_at: string;
+  updated_at: string;
+  invoice_number: string | null;
+  supplier_name: string | null;
+  total_amount: string | null;
+  currency: string | null;
+  invoice_state: string | null;
+}
+
+export interface ApprovalList {
+  items: Approval[];
+  total: number;
+}

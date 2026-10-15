@@ -65,6 +65,20 @@ class InvoiceLineItemUpdate(BaseModel):
     line_total: Decimal | None = None
 
 
+class InvoiceCreate(BaseModel):
+    document_id: Any | None = None
+    supplier_name: str | None = None
+    supplier_tax_id: str | None = None
+    invoice_number: str | None = None
+    invoice_date: date | None = None
+    due_date: date | None = None
+    currency: str | None = Field(default=None, min_length=3, max_length=3)
+    subtotal: Decimal | None = None
+    tax_amount: Decimal | None = None
+    total_amount: Decimal | None = None
+    line_items: list[InvoiceLineItemUpdate] | None = None
+
+
 class InvoiceUpdate(BaseModel):
     invoice_number: str | None = None
     invoice_date: date | None = None
@@ -81,6 +95,7 @@ class InvoiceUpdate(BaseModel):
 
 
 __all__ = [
+    "InvoiceCreate",
     "InvoiceData",
     "InvoiceLineItemData",
     "InvoiceRead",

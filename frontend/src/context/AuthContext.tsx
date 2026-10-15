@@ -94,3 +94,12 @@ export function useAuth(): AuthContextValue {
   }
   return context;
 }
+
+/** Role of the caller in the currently selected tenant. */
+export function useCurrentRole(): string | null {
+  const { memberships } = useAuth();
+  const tenantId = localStorage.getItem("automation_tenant_id");
+  const membership =
+    memberships.find((m) => m.tenant_id === tenantId) ?? memberships[0];
+  return membership ? membership.role_name : null;
+}

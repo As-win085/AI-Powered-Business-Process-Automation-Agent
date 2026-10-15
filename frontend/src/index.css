@@ -309,6 +309,75 @@ label {
   line-height: 1.45;
 }
 
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-header h2 {
+  margin: 0;
+}
+
+textarea {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  resize: vertical;
+}
+
+.required {
+  color: var(--error);
+}
+
+.badge-pending {
+  background: #fdf1e3;
+  color: #a05a00;
+}
+
+.badge-approved {
+  background: #e5f6ec;
+  color: var(--ok);
+}
+
+.badge-rejection_requested,
+.badge-correction_requested {
+  background: #fdeceb;
+  color: var(--error);
+}
+
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 39, 51, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 460px;
+  margin: 0;
+}
+
+.dialog h3 {
+  margin-top: 0;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
 @media (max-width: 900px) {
   .viewer-split {
     grid-template-columns: 1fr;

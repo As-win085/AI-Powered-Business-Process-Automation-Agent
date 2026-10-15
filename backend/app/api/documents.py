@@ -1,11 +1,12 @@
 import uuid
 from typing import Literal
 
-from fastapi import APIRouter, Depends, File, Query, UploadFile, status
+from fastapi import APIRouter, Depends, File, Query, Response, UploadFile, status
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 
 from app.api.deps import require_permission
+from app.core.config import settings
 from app.core.permissions import Permission
 from app.core.tenant_context import TenantContext
 from app.db.session import get_db
@@ -106,18 +107,34 @@ def download_document(
     )
 
 
-@router.post("/{document_id}/process", response_model=DocumentRead, status_code=status.HTTP_202_ACCEPTED)
+@router.post("/{document_id}/process", response_model=DocumentRead)
 def process_document(
     document_id: uuid.UUID,
+    response: Response,
     context: TenantContext = Depends(require_permission(Permission.DOCUMENT_UPLOAD)),
     db: Session = Depends(get_db),
 ) -> DocumentRead:
-    """Queue document processing and return immediately (async)."""
+    """Process a document.
+
+    When async processing is enabled the work is queued for a worker and the
+    call returns ``202`` immediately. When it is disabled (tests or local runs
+    without a worker) extraction runs inline and the finished document is
+    returned with ``200``.
+    """
     document = document_service.get_document(
         db, tenant_id=context.tenant_id, document_id=document_id
     )
-    document_service.enqueue_document_processing(document.id, db=db, tenant_id=context.tenant_id)
-    db.refresh(document)
+    if settings.auto_process_documents:
+        document_service.enqueue_document_processing(
+            document.id, db=db, tenant_id=context.tenant_id
+        )
+        db.refresh(document)
+        response.status_code = status.HTTP_202_ACCEPTED
+        return DocumentRead.model_validate(document)
+
+    document = document_service.process_document(
+        db, tenant_id=context.tenant_id, document_id=document.id
+    )
     return DocumentRead.model_validate(document)
 
 

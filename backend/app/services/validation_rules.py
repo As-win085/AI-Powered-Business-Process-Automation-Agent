@@ -19,7 +19,15 @@ def _decimal(val: Any) -> Decimal | None:
 
 def required_fields_present(data: dict[str, Any]) -> tuple[str, str, dict[str, Any]]:
     missing = []
-    required = ["invoice_number", "invoice_date", "supplier_name", "currency", "subtotal", "tax_amount", "total_amount"]
+    required = [
+        "invoice_number",
+        "invoice_date",
+        "supplier_name",
+        "currency",
+        "subtotal",
+        "tax_amount",
+        "total_amount",
+    ]
     for r in required:
         if data.get(r) is None or (isinstance(data.get(r), str) and data.get(r).strip() == ""):
             missing.append(r)
@@ -36,7 +44,7 @@ def totals_consistent(data: dict[str, Any]) -> tuple[str, str, dict[str, Any]]:
         return ("totals_consistent", "warn", {"reason": "missing_values"})
     try:
         expected = subtotal + tax
-        if abs(expected - total) > Decimal("0.01"):
+        if abs(expected - total) > Decimal("0.005"):
             return ("totals_consistent", "error", {"expected": str(expected), "actual": str(total)})
     except Exception:
         return ("totals_consistent", "error", {})
@@ -60,8 +68,12 @@ def line_totals_sum(data: dict[str, Any]) -> tuple[str, str, dict[str, Any]]:
         return ("line_totals_sum", "warn", {"reason": "missing_subtotal"})
     if any_bad:
         return ("line_totals_sum", "warn", {"reason": "missing_line_totals"})
-    if abs(sum_lines - subtotal) > Decimal("0.01"):
-        return ("line_totals_sum", "error", {"sum_lines": str(sum_lines), "subtotal": str(subtotal)})
+    if abs(sum_lines - subtotal) > Decimal("0.005"):
+        return (
+            "line_totals_sum",
+            "error",
+            {"sum_lines": str(sum_lines), "subtotal": str(subtotal)},
+        )
     return ("line_totals_sum", "ok", {})
 
 
@@ -89,7 +101,6 @@ def valid_currency_and_date(data: dict[str, Any]) -> tuple[str, str, dict[str, A
 
 
 def supplier_exists_or_flagged(data: dict[str, Any]) -> tuple[str, str, dict[str, Any]]:
-    # Pure rule: if supplier_name present, ok; else error
     if data.get("supplier_name"):
         return ("supplier_exists_or_flagged", "ok", {})
     return ("supplier_exists_or_flagged", "warn", {"reason": "missing_supplier"})

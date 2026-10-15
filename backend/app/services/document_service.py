@@ -151,13 +151,13 @@ def process_document(db: Session, *, tenant_id: uuid.UUID, document_id: uuid.UUI
         pages = extraction_service.extract_pdf_text(content)
     except extraction_service.ExtractionError as exc:
         reason = str(exc)
-        if document.status not in ("failed",):  # only log first meaningful failure; avoid duplicates
+        if document.status != "failed":  # log the first failure only
             document.status = "failed"
             document.error = reason
         job.status = "failed"
         job.error = reason
         job.finished_at = now
-        try:
+        with contextlib.suppress(Exception):
             audit_service.log_audit(
                 db,
                 tenant_id=tenant_id,
@@ -166,8 +166,6 @@ def process_document(db: Session, *, tenant_id: uuid.UUID, document_id: uuid.UUI
                 entity_id=document.id,
                 details={"reason": reason},
             )
-        except Exception:
-            pass
         db.commit()
         return document
 
@@ -198,7 +196,7 @@ def process_document(db: Session, *, tenant_id: uuid.UUID, document_id: uuid.UUI
     job.finished_at = now
     job.error = None
 
-    try:
+    with contextlib.suppress(Exception):
         audit_service.log_audit(
             db,
             tenant_id=tenant_id,
@@ -211,8 +209,6 @@ def process_document(db: Session, *, tenant_id: uuid.UUID, document_id: uuid.UUI
                 "embedded_pages": sum(1 for page in pages if page.source == "embedded"),
             },
         )
-    except Exception:
-        pass
     db.commit()
     return document
 

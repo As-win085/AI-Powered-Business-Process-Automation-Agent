@@ -1,10 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
 
-import { useAuth } from "../context/AuthContext";
+import { useAuth, useCurrentRole } from "../context/AuthContext";
 import TenantSelect from "./TenantSelect";
 
 export default function Layout() {
   const { user, logout } = useAuth();
+  const role = useCurrentRole();
+  const canApprove = role === "admin" || role === "approver";
 
   return (
     <div className="app">
@@ -14,6 +16,7 @@ export default function Layout() {
         </Link>
         <nav className="topbar-nav">
           <Link to="/documents">Documents</Link>
+          {canApprove && <Link to="/approvals">Approvals</Link>}
         </nav>
         <div className="topbar-right">
           <TenantSelect />

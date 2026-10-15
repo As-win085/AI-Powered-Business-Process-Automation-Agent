@@ -7,9 +7,11 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     ForeignKeyConstraint,
+    Index,
     String,
     Text,
     UniqueConstraint,
+    text,
 )
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
@@ -33,6 +35,15 @@ class Approval(UUIDPrimaryKeyMixin, TenantScopedMixin, TimestampMixin, Base):
             name="ck_approvals_decision",
         ),
         UniqueConstraint("tenant_id", "id", name="uq_approvals_tenant_id"),
+        # At most one open (undecided) approval per invoice. A correction that
+        # re-enters the workflow creates a fresh row once this one is decided.
+        Index(
+            "uq_approvals_pending_invoice",
+            "tenant_id",
+            "invoice_id",
+            unique=True,
+            postgresql_where=text("decision = 'pending'"),
+        ),
     )
 
     invoice_id: Mapped[uuid.UUID] = mapped_column(nullable=False, index=True)

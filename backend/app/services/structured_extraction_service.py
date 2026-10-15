@@ -6,7 +6,6 @@ from pydantic import ValidationError
 from app.integrations.llm import LLMProvider, get_llm_provider
 from app.schemas.invoice import InvoiceData
 
-
 SYSTEM_PROMPT = (
     "Return null rather than guess. Never compute invoice/subtotal/tax/total amounts. "
     "Do not fabricate supplier/customer IDs. Be conservative with uncertain fields."
